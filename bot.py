@@ -25,7 +25,6 @@ logger = logging.getLogger(__name__)
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
 def start(update: Update, context: CallbackContext) -> None:
-  """Send a message when the command /start is issued."""
   update.message.reply_text('Hi send an image to classify!')
 
 
