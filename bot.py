@@ -44,6 +44,7 @@ def photo(update: Update, context: CallbackContext) -> int:
   photo_file.download('user_photo.jpg')
   logger.info("Photo of %s: %s", user.first_name, 'user_photo.jpg')
   label = model.predict('user_photo.jpg')[0]
+  print('Label: ', label)
   if label > 0.5:
     update.message.reply_text('Damage Detected!!!')
   else:
