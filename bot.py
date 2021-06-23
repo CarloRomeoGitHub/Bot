@@ -30,7 +30,6 @@ def start(update: Update, context: CallbackContext) -> None:
 
 
 def help_command(update: Update, context: CallbackContext) -> None:
-  """Send a message when the command /help is issued."""
   update.message.reply_text('Help!')
 
 
@@ -53,7 +52,6 @@ def photo(update: Update, context: CallbackContext) -> int:
 
 
 def main():
-  """Start the bot."""
   # Create the Updater and pass it your bot's token.
   load_model()
   TOKEN = "1847936147:AAF9wmalqDW87DgwioOQbOqgIiwS4z4V67s" # place your token here
