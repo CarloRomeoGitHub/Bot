@@ -12,8 +12,8 @@ import os
 
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
-import tensorflow
-from tensorflow.keras import models
+# import tensorflow
+# from tensorflow.keras import models
 
 
 # Enable logging
@@ -44,16 +44,16 @@ def photo(update: Update, context: CallbackContext) -> int:
   photo_file.download('user_photo.jpg')
   logger.info("Photo of %s: %s", user.first_name, 'user_photo.jpg')
   label = model.predict('user_photo.jpg')[0]
-  if label > 0.5:
-    update.message.reply_text('Damage Detected!!!')
-  else:
-    update.message.reply_text('No Damage Detected...')
+#   if label > 0.5:
+#     update.message.reply_text('Damage Detected!!!')
+#   else:
+#     update.message.reply_text('No Damage Detected...')
   update.message.reply_text('I m working!')
 
 
 def main():
   # Create the Updater and pass it your bot's token.
-  load_model()
+#   load_model()
   TOKEN = "1847936147:AAF9wmalqDW87DgwioOQbOqgIiwS4z4V67s" # place your token here
   updater = Updater(TOKEN, use_context=True)
   PORT = int(os.environ.get('PORT', '8443'))
