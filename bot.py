@@ -70,7 +70,7 @@ def main():
 
   updater.start_webhook(listen="0.0.0.0",  port=PORT, url_path=TOKEN, webhook_url="https://tipregofunziona.herokuapp.com/" + TOKEN)
   # updater.bot.set_webhook("https://telegbottry.herokuapp.com/" + TOKEN)
-  dispatcher.start_polling()
+  updater.start_polling()
   updater.idle()
 
 if __name__ == '__main__':
