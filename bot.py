@@ -35,7 +35,7 @@ def help_command(update: Update, context: CallbackContext) -> None:
 
 def load_model():
   global model
-  model = models.load_model('https://github.com/CarloRomeoGitHub/Bot/blob/e3ee421d5f862b259c8fdc7429e20bfc04d4d17a/T1Res152-FT.h5')
+  model = models.load_model('Bot/T1Res152-FT.h5')
   print('Model Loaded')
 
 def photo(update: Update, context: CallbackContext) -> int:
