@@ -12,6 +12,7 @@ import os
 
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+import tensorflow
 from tensorflow.keras import models
 
 
