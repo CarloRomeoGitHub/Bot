@@ -53,7 +53,7 @@ def photo(update: Update, context: CallbackContext) -> int:
 
 
 def main():
-"""Start the bot."""
+  """Start the bot."""
   # Create the Updater and pass it your bot's token.
   load_model()
   TOKEN = "1847936147:AAF9wmalqDW87DgwioOQbOqgIiwS4z4V67s" # place your token here
