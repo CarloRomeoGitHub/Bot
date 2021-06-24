@@ -71,7 +71,7 @@ def main():
   dispatcher.add_handler(CommandHandler("help", help_command))
   dispatcher.add_error_handler(CallbackContext)
   # on noncommand i.e message - echo the message on Telegram
-  dispatcher.add_handler(MessageHandler(Filters.photo & ~Filters.command, photo)) 
+  dispatcher.add_handler(MessageHandler(Filters.photo, photo)) 
 
   updater.start_webhook(listen="0.0.0.0",  port=PORT, url_path=TOKEN, webhook_url="https://tipregofunziona.herokuapp.com/" + TOKEN)
   # updater.bot.set_webhook("https://telegbottry.herokuapp.com/" + TOKEN)
