@@ -35,7 +35,7 @@ def help_command(update: Update, context: CallbackContext) -> None:
 
 
 def load_model():
-  print('Teleg version: ', telegram.__versions__)
+  print('Teleg version: ', telegram.__version__)
   global model
   model = models.load_model('model.h5')
   print('Model Loaded')
