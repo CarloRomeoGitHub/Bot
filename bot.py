@@ -40,7 +40,7 @@ def load_model():
   model = models.load_model('model.h5')
   print('Model Loaded')
 
-def photo(update: Update, context: CallbackContext) -> int:
+def photo(update: Update, context: CallbackContext):
   user = update.message.from_user
   photo_file = update.message.photo[-1].get_file()
   photo_file.download('user_photo.jpg')
