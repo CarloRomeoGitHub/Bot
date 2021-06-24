@@ -47,7 +47,7 @@ def photo(update: Update, context: CallbackContext) -> int:
   print(type(photo_file))
   logger.info("Photo of %s: %s", user.first_name, 'user_photo.jpg')
 #   img = tensorflow.image.resize(photo_file, (
-  label = model.predict('user_photo.jpg')[0]
+  label = model.predict('user_photo.jpg')
   print('Label: ', label)
   if label > 0.5:
     update.message.reply_text('Damage Detected!!!')
@@ -69,7 +69,7 @@ def main():
   # on different commands - answer in Telegram
   dispatcher.add_handler(CommandHandler("start", start))
   dispatcher.add_handler(CommandHandler("help", help_command))
-
+  dispatcher.add_error_handler(CallbackContext)
   # on noncommand i.e message - echo the message on Telegram
   dispatcher.add_handler(MessageHandler(Filters.photo & ~Filters.command, photo)) 
 
