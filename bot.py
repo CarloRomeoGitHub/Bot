@@ -48,7 +48,7 @@ def photo(update: Update, context: CallbackContext) -> int:
   logger.info("Photo of %s: %s", user.first_name, 'user_photo.jpg')
 #   img = tensorflow.image.resize(photo_file, (
   print(photo_file[0])
-  label = model.predict(photo_file)
+  label = model.predict('user_photo.jpg')[0]
   print('Label: ', label)
   if label > 0.5:
     update.message.reply_text('Damage Detected!!!')
