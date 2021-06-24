@@ -1,3 +1,3 @@
 tensorflow==2.4.1
 python-telegram-bot
-PIL==8.2.0
+Pillow==8.2.0
