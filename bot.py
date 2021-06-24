@@ -46,7 +46,7 @@ def photo(update: Update, context: CallbackContext):
   photo_file = update.message.photo[-1].get_file()
   photo_file.download('user_photo.jpg')
   np_photo = np.asarray(PIL.Image.open('user_photo.jpg'))
-  np_photo.resize((224, 224, 3))
+  np_photo = np.resize(np_photo, (224, 224, 3))
   logger.info("Photo of %s: %s", user.first_name, 'user_photo.jpg')
 #   img = tensorflow.image.resize(photo_file, (
   label = model.predict(np_photo)
