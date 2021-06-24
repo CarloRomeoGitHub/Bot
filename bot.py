@@ -9,7 +9,7 @@ Original file is located at
 
 import logging
 import os
-
+import numpy as np
 import telegram
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
@@ -44,10 +44,11 @@ def photo(update: Update, context: CallbackContext):
   user = update.message.from_user
   photo_file = update.message.photo[-1].get_file()
   photo_file.download('user_photo.jpg')
-  print(type(photo_file))
+  np_photo = np.load(photo_file.out)
+  np_photo.resize((224, 224, 3))
   logger.info("Photo of %s: %s", user.first_name, 'user_photo.jpg')
 #   img = tensorflow.image.resize(photo_file, (
-  label = model.predict(photo_file)
+  label = model.predict(np_photo)
   print('Label: ', label)
   if label > 0.5:
     update.message.reply_text('Damage Detected!!!')
