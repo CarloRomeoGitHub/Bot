@@ -47,7 +47,6 @@ def photo(update: Update, context: CallbackContext) -> int:
   print(type(photo_file))
   logger.info("Photo of %s: %s", user.first_name, 'user_photo.jpg')
 #   img = tensorflow.image.resize(photo_file, (
-  print(photo_file[0])
   label = model.predict('user_photo.jpg')[0]
   print('Label: ', label)
   if label > 0.5:
