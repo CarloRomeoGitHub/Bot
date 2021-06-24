@@ -13,6 +13,7 @@ import numpy as np
 import telegram
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+import PIL
 import tensorflow
 from tensorflow.keras import models
 
@@ -44,7 +45,7 @@ def photo(update: Update, context: CallbackContext):
   user = update.message.from_user
   photo_file = update.message.photo[-1].get_file()
   photo_file.download('user_photo.jpg')
-  np_photo = np.load(photo_file.out)
+  np_photo = numpy.asarray(PIL.Image.open('user_photo.jpg'))
   np_photo.resize((224, 224, 3))
   logger.info("Photo of %s: %s", user.first_name, 'user_photo.jpg')
 #   img = tensorflow.image.resize(photo_file, (
